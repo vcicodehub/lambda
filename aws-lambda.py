@@ -26,6 +26,7 @@ def retrieve_vendors():
       cursor = conn.cursor()
       cursor.execute("select row_to_json(vendors) from (select * from om_vendor) as vendors")
       result = cursor.fetchall()
+      print("Retrieved all of the vendors")
 
       vendors = []
       for vendor in result:
