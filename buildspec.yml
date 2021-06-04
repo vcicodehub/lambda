@@ -3,6 +3,12 @@ phases:
   install:
     runtime-versions:
         python: 3.8
+  pre-build:
+    commands:
+      - cd .venv/Lib/site-packages
+      - zip ${OLDPWD}/lambda-package.zip .
+      - cd ${OLDPWD}
+      - zip -g lambda-package.zip aws-lambda.py
   build:
     commands:
       - sam package --template-file template.yml --s3-bucket om-lambda-repo --output-template-file packaged-template.yml

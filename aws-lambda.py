@@ -59,4 +59,5 @@ def main():
     vendors = retrieve_vendors()
     print(vendors)
 
-main()
+if __name__ == "__main__":
+    main()

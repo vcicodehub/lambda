@@ -14,3 +14,6 @@ A sample application that demonstrates how to build a AWS Lambda function using 
 ### SAM Commands
 *Deploy Lambda Function*
 `sam deploy --template-file sam-template.yml --stack-name om-lambda-stack --capabilities CAPABILITY_IAM`
+
+## Recent Error Message
+> Application metadata not found in the SAM template: 'missing AWS::ServerlessRepo::Application section in template Metadata'
