@@ -3,7 +3,7 @@ phases:
   install:
     runtime-versions:
         python: 3.8
-  pre-build:
+  pre_build:
     commands:
       - cd .venv/Lib/site-packages
       - zip ${OLDPWD}/lambda-package.zip .
