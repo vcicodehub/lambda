@@ -6,6 +6,7 @@ phases:
   pre_build:
     commands:
       - mkdir .build
+      - ls -al
       - cp -a ./.venv/Lib/site-packages/* ./.build
       - rm -r ./.build/psycopg2
       - cp /aws-psycopg2 /.build/psycopg2
