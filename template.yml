@@ -4,7 +4,7 @@ Resources:
   OMVendorLambdaFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Runtime: python3.8
+      Runtime: python3.7
       Handler: aws-lambda.lambda_handler
       CodeUri:
         Bucket: om-lambda-repo

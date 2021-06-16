@@ -5,10 +5,13 @@ phases:
         python: 3.8
   pre_build:
     commands:
-      - cd .venv/Lib/site-packages
-      - zip -r9 ${OLDPWD}/lambda-package.zip .
-      - cd ${OLDPWD}
-      - zip -g lambda-package.zip aws-lambda.py
+      - mkdir .build
+      - cp -a ./.venv/Lib/site-packages/* ./.build
+      - rm -r ./.build/psycopg2
+      - cp ./aws-psycopg2/* ./.build/psycopg2/
+      - cp ./*.py ./.build/
+      - zip -r9 lambda-package.zip ./.build/*
+      - rm -r ./.build
   build:
     commands:
       - sam package --template-file template.yml --s3-bucket om-lambda-repo --output-template-file packaged-template.yml

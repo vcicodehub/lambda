@@ -45,8 +45,8 @@ def retrieve_vendors():
 
 def lambda_handler(event, context):
     print(event)
-    method = event["httpMethod"]
-    message = "Hello!  I received a " + method + " request."
+    #method = event["httpMethod"]
+    #message = "Hello!  I received a " + method + " request."
 
     vendors = retrieve_vendors()
 
