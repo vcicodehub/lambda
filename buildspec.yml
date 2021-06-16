@@ -8,10 +8,10 @@ phases:
       - mkdir .build
       - ls -al
       - cp -a ./.venv/Lib/site-packages/* ./.build
-      - rm -r /.build/psycopg2
-      - cp -a /aws-psycopg2 /.build/psycopg2
-      - cp *.py /.build
-      - zip -r9 lambda-package.zip /.build/*
+      - rm -r ./.build/psycopg2
+      - cp -a ./aws-psycopg2 ./.build/psycopg2
+      - cp *.py ./.build
+      - zip -r9 lambda-package.zip ./.build/*
       - rm -r .build
   build:
     commands:
